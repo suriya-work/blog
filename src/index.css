@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&family=Vazirmatn:wght@200;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ffff;
+    font-family: 'Vazirmatn', 'Roboto', sans-serif;
+}
+
+.nav-menu {
+    color: #94a3b8 !important;
+
+}
+.nav-menu:hover {
+    color: #000 !important;
+    transition: ease .2s !important;
+    
+}
+
+.header-menu {
+    position: absolute;
+    left: 0;
+    top: 70%;
+    padding: 0;
+    background: #FFEFBA;
+    width: 50%;
+    border-radius: 20px;
+  }
+
+  .boeder-banner {
+    border-left: 2px solid #dadee7 !important;
+    border-right: 2px solid #dadee7  !important;
+   line-height: 1.5 !important;
+  }
+
+  
+  
