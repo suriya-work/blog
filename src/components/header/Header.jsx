@@ -1,16 +1,18 @@
 
 import { Fragment } from 'react'
-import { Disclosure, Menu, Transition } from '@headlessui/react';
+import { Link } from 'react-router-dom';
+import { Disclosure } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { TbBrandBlogger } from 'react-icons/tb';
 import { BsBell } from 'react-icons/bs'
+import { AiOutlineUser } from 'react-icons/ai'
 
 const navigation = [
-    { name: 'Home', href: '#', current: false },
-    { name: 'Blog', href: '#', current: false },
+    { name: 'Home', href: '/', current: false },
+    { name: 'Blog', href: '/card', current: false },
     { name: 'Services', href: '#', current: false },
     { name: 'Pricing', href: '#', current: false },
-    { name: 'About Us', href: '#', current: false },
+    { name: 'About Us', href: 'about', current: false },
 ]
 
 function classNames(...classes) {
@@ -24,7 +26,7 @@ export default function Header() {
                 <>
                     <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
                         <div className="relative flex h-16 items-center justify-between">
-                            <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
+                            <div className="absolute inset-y-0 left-0 flex items-center lg:hidden">
                                 {/* Mobile menu button*/}
                                 <Disclosure.Button className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                                     <span className="absolute -inset-0.5" />
@@ -37,7 +39,7 @@ export default function Header() {
                                 </Disclosure.Button>
                             </div>
                             <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-                                <div className="flex flex-shrink-0 items-center">
+                                <div className="lg:flex flex-shrink-0 hidden items-center">
                                     <button className='bg-[#3b82f6] rounded-full p-2'>
 
                                         <TbBrandBlogger size={22} color='#fff' />
@@ -45,12 +47,12 @@ export default function Header() {
                                     <h1 className='font-extrabold text-[#000] ml-2'>BLOG.<span className='font-extrabold text-[#eee]'>CO</span></h1>
                                     <div className='border border-r-1 h-[60%] ml-5'></div>
                                 </div>
-                                <div className="hidden sm:ml-6 sm:block">
+                                <div className="md:hidden lg:flex ml-6 hidden">
                                     <div className="flex space-x-2">
                                         {navigation.map((item) => (
-                                            <a
+                                            <Link
                                                 key={item.name}
-                                                href={item.href}
+                                                to={item.href}
                                                 className={classNames(
                                                     item.current ? ' text-[#94a3b8]' : 'hover:text-[#000]',
                                                     'px-6 py-4 text-sm font-bold mx-[8rem] me-0  nav-menu'
@@ -58,16 +60,17 @@ export default function Header() {
                                                 aria-current={item.current ? 'page' : undefined}
                                             >
                                                 {item.name}
-                                            </a>
+                                            </Link>
                                         ))}
                                     </div>
                                 </div>
                             </div>
-                            <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                                <BsBell size={22} />
+                            <div className="absolute inset-y-0 gap-5 mt-2 right-10 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+                                <BsBell size={24} />
 
+                                <AiOutlineUser size={24} />
                                 {/* Profile dropdown */}
-                                <Menu as="div" className="relative ml-3">
+                                {/* <Menu as="div" className="relative ml-3">
                                     <div>
                                         <Menu.Button className="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                                             <span className="absolute -inset-1.5" />
@@ -76,8 +79,8 @@ export default function Header() {
                                             </button>
                                         </Menu.Button>
                                     </div>
-                                </Menu>
-                            </div>                                        
+                                </Menu> */}
+                            </div>
                         </div>
 
                     </div>
@@ -90,7 +93,7 @@ export default function Header() {
                                     as="a"
                                     href={item.href}
                                     className={classNames(
-                                        item.current ? 'bg-black text-black' : 'text-gray-300',
+                                        item.current ? 'bg-black text-black' : 'text-[#000]',
                                         'block rounded-md px-3 py-2 text-base font-medium'
                                     )}
                                     aria-current={item.current ? 'page' : undefined}
