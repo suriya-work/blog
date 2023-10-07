@@ -7,6 +7,7 @@ import Banner from './components/banner/Banner'
 import Footer from './components/footer/Footer'
 import About from './components/about/About'
 import Card from './components/card/Card'
+import Write from './components/write/Write'
 // imported articles in banner
 // imported Card in banner
 // imported About in and link to About 
@@ -19,6 +20,7 @@ const App = () => {
         <Route path='/' element={<Banner />} />
         <Route path='/about' element={<About />} />
         <Route path='/card' element={<Card />} />
+        <Route path='/write' element={<Write />} />
 
       </Routes>
       <Footer />

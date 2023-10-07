@@ -10,7 +10,7 @@ import { AiOutlineUser } from 'react-icons/ai'
 const navigation = [
     { name: 'Home', href: '/', current: false },
     { name: 'Blog', href: '/card', current: false },
-    { name: 'Services', href: '#', current: false },
+    { name: 'Services', href: '/write', current: false },
     { name: 'Pricing', href: '#', current: false },
     { name: 'About Us', href: 'about', current: false },
 ]
